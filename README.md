@@ -1,78 +1,117 @@
-# Question Solution Mapper
+# 🚀 Question Solution Mapper
 
-## Overview
+> Turning a tedious manual workflow into a fully automated content-processing pipeline.
 
-Question Solution Mapper is a Python-based automation tool that eliminates the manual process of taking screenshots and renaming question and solution images.
+## 🎯 The Problem
 
-The system uses metadata available in an Excel file to map randomly named image files from a ZIP archive and automatically rename them into an organized format:
+Imagine receiving:
 
-Q1.png, S1.png, Q2.png, S2.png ... etc.
+📄 A PDF containing all questions and solutions
 
-This replaces a time-consuming manual workflow with a fully automated pipeline.
+📦 A ZIP file containing hundreds of images with random names
 
----
-
-## Problem Statement
-
-The content generation team receives:
-
-1. PDF containing all questions and solutions
-2. ZIP file containing question and solution images with random filenames
-3. Excel file containing metadata about each question
+📊 An Excel sheet containing metadata
 
 Example:
 
-Before:
+QUES_ENG_fgcc35vp5llm8gyvi540mdzs.png
 
-QUES_ENG_axsmp57v00jnlju36fhcfw2y.png
+SOLU_ENG_yh0nkd2ywd9bfp9utd4og9xz2.png
+
+Employees were manually:
+
+❌ Taking screenshots
+
+❌ Renaming files one by one
+
+❌ Organizing question and solution images
+
+A process that was repetitive, error-prone, and time-consuming.
+
+---
+
+## 💡 The Idea
+
+Instead of manually processing every file, why not use the metadata already present in the Excel sheet?
+
+This project automatically:
+
+✅ Reads Excel metadata
+
+✅ Identifies question order
+
+✅ Maps random image names
+
+✅ Matches question images with solution images
+
+✅ Renames files automatically
+
+✅ Creates a clean structured output
+
+---
+
+## ⚙️ How It Works
+
+```text
+Excel Metadata
+      │
+      ▼
+Build Mapping Dictionary
+      │
+      ▼
+Read ZIP Archive
+      │
+      ▼
+Match Image Names
+      │
+      ▼
+Rename Files
+      │
+      ▼
+Generate Organized Output
+```
+
+---
+
+## 🔍 Example
+
+### Before
+
+```text
+QUES_ENG_fgcc35vp5llm8gyvi540mdzs.png
 SOLU_ENG_fgcc35vp5llm8gyvi540mdzs.png
 
-After:
+QUES_ENG_yh0nkd2ywd9bfp9utd4og9xz2.png
+SOLU_ENG_yh0nkd2ywd9bfp9utd4og9xz2.png
+```
 
+### After
+
+```text
 Q1.png
 S1.png
 
-The existing process required employees to manually take screenshots and rename every file.
-
-This project automates the entire workflow.
-
----
-
-## Solution
-
-The application:
-
-- Reads metadata from Excel
-- Extracts question order information
-- Maps random image filenames to their actual sequence
-- Identifies corresponding solution images
-- Renames files automatically
-- Generates an organized output folder
-
-Output Example:
-
-Q1.png
-S1.png
 Q2.png
 S2.png
-Q3.png
-S3.png
+```
 
 ---
 
-## Features
+## 📈 Results
 
-- Automatic Excel metadata processing
-- ZIP archive handling
-- Question-to-solution mapping
-- Bulk file renaming
-- Organized output generation
-- Output ZIP creation
-- Zero manual screenshot work
+### Successfully Processed
+
+| Metric | Value |
+|----------|---------|
+| Questions | 45 |
+| Solutions | 45 |
+| Total Files | 90 |
+| Manual Screenshots | 0 |
+| Renaming Accuracy | 100% |
 
 ---
 
-## Technologies Used
+## 🛠️ Tech Stack
 
 - Python
 - Pandas
@@ -80,84 +119,60 @@ S3.png
 - Pathlib
 - OS Module
 - File Handling
+- Data Processing
 
 ---
 
-## Workflow
+## 📂 Project Structure
 
-Excel Metadata
-↓
-Build Mapping Dictionary
-↓
-Read ZIP Images
-↓
-Match Question & Solution Files
-↓
-Rename Files
-↓
-Generate Output Folder
-↓
-Export Final ZIP
-
----
-
-## Results
-
-Successfully processed:
-
-- 45 Questions
-- 45 Solutions
-- 90 Files Renamed
-- 0 Manual Intervention
-
-Generated Output:
-
-Q1.png → Q45.png
-
-S1.png → S45.png
-
----
-
-## Project Structure
-
+```text
 question-solution-mapper/
 
 ├── question_solution_mapper.ipynb
-
 ├── sample_data/
-
-│ ├── Excelfile.xlsx
-
-│ ├── Zipfile.zip
-
+│   ├── Excelfile.xlsx
+│   └── Zipfile.zip
 │
-
 ├── renamed_output/
-
-│ ├── Q1.png
-
-│ ├── S1.png
-
-│ └── ...
-
+│   ├── Q1.png
+│   ├── S1.png
+│   ├── Q2.png
+│   ├── S2.png
+│   └── ...
 │
-
 └── README.md
+```
 
 ---
 
-## Future Improvements
+## 🌟 Key Highlights
 
-- Convert notebook into production-ready Python package
-- Add GUI interface
-- Support multiple ZIP files
-- Add validation reports
+✔ Automated a real-world workflow
+
+✔ Eliminated repetitive manual work
+
+✔ Processed bulk files using metadata mapping
+
+✔ Built a scalable file-renaming pipeline
+
+✔ Demonstrated data processing and automation skills
+
+---
+
+## 🔮 Future Enhancements
+
+- Build a GUI version
+- Add drag-and-drop support
+- Generate validation reports
+- Convert into a Python package
 - Deploy as a web application
 
 ---
 
-## Author
+## 👩‍💻 Author
 
-Khushi Yadav
+**Khushi Yadav**
 
-Python | Data Analytics | Automation | Problem Solving
+Passionate about Automation, Data Analytics, and Building Practical Solutions to Real Problems.
+
+⭐ If you found this project interesting, feel free to explore the repository!
